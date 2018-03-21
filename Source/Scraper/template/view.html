@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>View</title>
+</head>
+<body>
+	<ul>
+		{% for competition in competitions %}
+			<li>{{ competition.id }} | {{ competition.league }} | {{ competition.kind }} | {{ competition.title }} | {{ competition.session }}</li>
+		{% endfor %}
+	</ul>
+	<br>
+	<ul>
+		{% for matche in matches %}
+			<li>{{ matche.id }} | {{ matche.matchno }} | {{ matche.date|date:"Y-m-d H:i" }} | {{ matche.hteam }} | {{ matche.gteam }} | {{ matche.hscore }} | {{ matche.gscore }} | {{ matche.haction }} | {{ matche.gaction }}</li>
+		{% endfor %}
+	</ul>
+	<br>
+	<ul>
+		{% for league in leagues %}
+			<li>{{ league.id }} | {{ league.cname }} | {{ league.lname }}</li>
+		{% endfor %}
+	</ul>
+</body>
+</html>
